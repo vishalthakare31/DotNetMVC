@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Employee Login";
+}
+
+<h2>Employee Login</h2>
+
+@using (Html.BeginForm("Login", "Employees", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.Label("name")
+        @Html.TextBox("name", null, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Id")
+        @Html.Password("Id", null, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+}
